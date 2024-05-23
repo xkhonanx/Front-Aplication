@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="colum1h">
+            <img src="" alt="">
+        </div>
+        <div class="colum2h">
+            <a class="menu" href="#home">Manager  Daniel Matteo</a>
+            
+        </div>
+        <div class="colum3h">
+            <button class="Descargar" onclick="location.href='index.html'"> SING OUT</button>
+            <img   class="manager" style="width: 35px; margin-left: 60px;" src="imagenes/usuario.png" alt="">
+        </div>
+    </div>
+
+    <div class="ManagerContent">
+
+            <div class="tabs" >
+                <button class="tablink" onclick="openTab('tab1')"> <img  class="iconmenu" src="svg/Cactus.svg" alt="" >Usuarios</button>
+                <button class="tablink" onclick="openTab('tab2')"> <img  class="iconmenu" src="svg/Clover.svg" alt="">Granja</button>
+                <button class="tablink" onclick="openTab('tab3')"> <img  class="iconmenu" src="svg/garden, plant, branches, leaves, herb.svg" alt="">Cultivos</button>
+                <button class="tablink" onclick="openTab('tab4')"> <img  class="iconmenu" src="svg/plants, flowers, tulips.svg" alt="">Dispositivo</button>
+                <button class="tablink" onclick="openTab('tab5')"> <img  class="iconmenu" src="svg/plants, herb, branch, leaves, h.svg" alt="">Lorem</button>
+                <button class="tablink" onclick="openTab('tab5')"> <img  class="iconmenu" src="svg/Flavoring.svg" alt="">ipsum</button>
+                <button class="tablink" onclick="openTab('tab5')"> <img  class="iconmenu" src="svg/Coffee grains, beans, branch.svg" alt="">Acciones</button>
+                <img src="svg/Sprout, herb.svg" style="width: 150px; margin-top: 100px; border-radius: 100%; background: linear-gradient(135deg, #74BB73, #45a5c3); padding: 25px;" alt="">
+                
+            </div>
+
+        <div class="Content-taps">
+              <div id="tab1" class="tabcontent">
+                <h1 >Usuarios</h1>
+
+                
+                <p>Usuarios registrados</p>
+                <button class="Descargar" id="abrirPopup">Crear Usuario</button>
+
+                 <div id="overlay"></div>
+                        <div id="popup">
+                        <span id="close">&times;</span>
+                        <form>
+                            <label for="usuario">Usuario:</label>
+                            <input type="text" id="usuario" name="usuario">
+                            <label for="nombres">Nombres:</label>
+                            <input type="text" id="nombres" name="nombres">
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" name="apellidos">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" name="correo">
+                            <input type="submit" value="Enviar">
+                        </form>
+                        </div>
+                        <div class="listas">
+                          <ul id="jugadores">
+                          </ul>
+                        </div>
+                        
+                        <script>
+
+                          // Estas son la listas
+                        fetch('http://h2oherogame.somee.com/api/Jugador')
+                        .then(response => response.json())
+                        .then(data => {
+                          const ul = document.getElementById('jugadores');
+                          data.forEach(jugador => {
+                            const li = document.createElement('li');
+                            li.classList.add('listusers');
+                            li.innerHTML = `<img class="iconmenu" src="svg/Cactus.svg" alt="" > ${jugador.nombreUsuario} | ${jugador.password} | ${jugador.nombres} | ${jugador.apellidos} | ${jugador.email} | <a class="acciones editar" href="">Editar </a> <a class="acciones borrar" href="" data-id="${jugador.jugadorId}"> | Borrar</a>`;
+                            ul.appendChild(li);
+                          });
+
+                          // editor de borrar
+                          const borrarLinks = document.querySelectorAll('.borrar');
+                          borrarLinks.forEach(link => {
+                            link.addEventListener('click', function(e) {
+                              e.preventDefault();
+                              const id = this.dataset.id;
+                              fetch(`http://h2oherogame.somee.com/api/Jugador/${id}`, {
+                                method: 'DELETE'
+                              })
+                              .then(response => response.json())
+                              .then(data => {
+                                
+                                location.reload();
+                              })
+                              .catch((error) => {
+                                console.error('Error:', error);
+                              });
+                            });
+                          });
+
+                          // editor de jugadores
+                          const editarLinks = document.querySelectorAll('.editar');
+                          editarLinks.forEach(link => {
+                            link.addEventListener('click', function(e) {
+                              e.preventDefault();
+                              const id = this.dataset.id;
+                              // Aquí puedes agregar un formulario o una ventana emergente para recoger los nuevos datos del jugador
+                              // Supongamos que ya tienes los nuevos datos en las variables: nombres, apellidos, nombreUsuario, password, photo, email
+                              fetch(`http://h2oherogame.somee.com/api/Jugador/${jugador.nombreUsuario} /${jugador.password}`, {
+                                method: 'PUT',
+                                headers: {
+                                  'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                  jugadorId: id,
+                                  nombres: nombres,
+                                  apellidos: apellidos,
+                                  nombreUsuario: nombreUsuario,
+                                  password: password,
+                                  photo: photo,
+                                  email: email
+                                })
+                              })
+                              .then(response => response.json())
+                              .then(data => {
+                                location.reload();
+                              })
+                              .catch((error) => {
+                                console.error('Error:', error);
+                              });
+                            });
+                          });
+                          // FIN editor de jugadores
+                        })
+                        .catch((error) => {
+                          console.error('Error:', error);
+                        });
+                        </script>
+
+
+                </div>
+              
+                <div id="tab2" class="tabcontent" style="display: none;">
+                  <h3>granja</h3>
+                  <p>Este es el contenido de la pestaña 2.</p>
+                </div>
+              <div id="tab3" class="tabcontent" style="display: none;">
+                <h3>Cultivos</h3>
+                <p>Este es el contenido de la pestaña 3.</p>
+              </div>
+              
+              <div id="tab4" class="tabcontent" style="display: none;">
+                <h3>Dispositivos</h3>
+                <p>Este es el contenido de la pestaña 4.</p>
+              </div>
+              
+              <div id="tab5" class="tabcontent" style="display: none;">
+                <h3>Acciones</h3>
+                <p>Este es el contenido de la pestaña 5.</p>
+              </div>
+              
+              <script src="scripts.js"></script>
+
+        </div>
+    </div>
+
+    
+     
+
+</body>
+</html>

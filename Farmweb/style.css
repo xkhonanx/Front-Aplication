@@ -1,0 +1,403 @@
+.body{
+    background-color: rgb(222, 222, 222);
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #74BB73, #45a5c3);
+    border-radius: 22px;
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.47);
+}
+.colum1h{
+    display: flex;
+    width: 30%;
+    
+
+}
+.colum2h{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    
+}
+.colum3h{
+    width: 20%;
+    align-items: center;
+    display: flex;
+    padding-left: 5%;
+    
+    
+    
+    
+}
+.menu{
+    padding-right: 20px;
+    text-decoration: none;
+    justify-content: flex-end;
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.menu:hover{
+    color: rgb(235, 208, 1);
+    transition: 0.4s;
+    scale: 110%;
+}
+.active{
+    color: rgb(235, 208, 1);
+}
+.Descargar{
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 22px;
+    font-weight: bold;
+    color: rgb(2, 218, 131);
+    border: 0px;
+    font-size: 15PX;
+    transition: 0.4s;
+    margin-left: 25px;
+    
+}
+.Descargar:hover{
+    background-color: #17b4ed;
+    transition: 0.4s;
+    scale: 110%;
+    color: aliceblue;
+}
+.Site{
+    display: flex;
+}
+.Slide{
+  background: linear-gradient(135deg, #74BB73, #45a5c3);
+height: 500px;
+justify-content: center;
+align-items: center;
+display: flex;
+color: aliceblue;
+border-radius: 22px;
+margin-bottom: 60px;
+position: relative; /* Asegura que el contenido se superponga correctamente */
+  width: 100%; /* Ancho del div */
+  height: 400px; /* Altura del div, ajusta según tus necesidades */
+ /* background-image: url('Imagenes/Mapa.jpeg'); /* URL de tu imagen de fondo */
+  background-size: cover; /* La imagen se ajusta para cubrir todo el div */
+  background-position: center;
+}
+
+.intslide{
+    align-items: center;
+    z-index: 2;
+}
+.buttonslide{
+ background-color: transparent;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ border-radius: 22px;
+ font-weight: bold;
+ color: rgb(255, 255, 255);
+ 
+ border-color: aliceblue;
+ font-size: 15PX;
+ transition: 0.4s;
+
+}
+.buttonslide:hover{
+    
+    transition: 0.4s;
+    scale: 115%;
+    
+
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #F2F2F2;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #58f6a4, #430185);   /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(37, 89, 2);  /* creates padding around scroll thumb */
+      border: 3px solid #F2F2F2;  /* creates padding around scroll thumb */
+  }
+  .columnastre{
+    padding: 10px;
+    margin: 50px;
+    text-align: center;
+    border-color: green;
+    
+    border-width: 5px;
+  }
+  .manager:hover{
+    background-color: white;
+    border-radius: 100%;
+    padding: 2px;
+  }
+  .manager{
+    background-color:  rgb(1, 141, 235);
+    border-radius: 100%;
+    padding: 2px;
+  }
+  .tabs{
+    padding-top: 60px;
+    margin-top: 50px;
+    width: 15%;
+    height: 75vh;
+    border-radius: 22px;
+    justify-content: center;
+    background-color: #e1e1e1;
+    border-color: linear-gradient(0deg, #74BB73, #45a5c3);;
+    border-width: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    
+  }
+  .tablink{
+    text-align: left;
+    width: 100%; 
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: #e1e1e1; 
+    color: #383838;
+    border-width: 0px;
+    transition: 0.4s;
+    flex: 1;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+   border-top-width: 0px;
+   border-bottom-width: 1px;
+    border-color:#e1e1e1;
+    padding-left: 5px;
+    font-weight: 600;
+  }
+  .tablink:hover{
+    
+    background: linear-gradient(65deg,#45a5c3, #74BB73);
+    color: #ffffff;
+    border-width: 0px;
+    transition: 0.4s;
+    
+  }
+  .activer {
+    background: linear-gradient(65deg,#45a5c3, #74BB73);
+    color: #ffffff;
+    border-width: 0px;
+    transition: 0.4s;
+
+    border-width: 1px;
+  }
+ .Content-taps {
+    width: 80%;
+    padding-top: 30px;
+    padding-left: 50px;
+    display: flex;
+  }
+  .ManagerContent{
+    display: flex;
+  }
+  .iconmenu{
+    width: 30px;
+    margin-right: 5px;
+  }
+  .listusers{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Estilo de la línea divisoria */
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    
+  }
+ 
+  .listas::before,
+.listas::after{
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc; /* Estilo de la línea divisoria */
+}
+ul {
+    list-style-type: none;
+    
+}
+.acciones{
+    margin-left: 15px;
+    text-decoration: none;
+    color: #4CAF50;
+}
+.acciones:hover{
+    color: #45a5c3;
+    text-decoration: line-through;
+}
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 9999; /* Z-index alto para que esté por encima de todo */
+  }
+  
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
+    width: 800px;
+    height: 500px;
+    background: linear-gradient(90deg, #ffffff, #f2f2f2); /* Fondo degradado */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10000; /* Z-index mayor para que esté sobre el overlay */
+    animation: slideInUp 0.5s ease; /* Animación de entrada */
+    display: none; /* Inicialmente oculto */
+   
+  }
+  
+  #close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(66, 151, 232);
+    font-size: 24px;
+  }
+  
+  form {
+    margin-top: 40px;
+    padding-right: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #51bfff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  /* Animación de entrada */
+  @keyframes slideInUp {
+    from {
+      transform: translate(-50%, 150%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  #popup.mostrar {
+    display: block;
+  }
+  #overlay {
+    /* Estilos previamente proporcionados */
+    display: none; /* Inicialmente oculto */
+  }
+  #contrasena{
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    align-items: center;
+    border-width: 0px;
+
+  }
+  #usuario{
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   width: 180px;
+    align-items: center;
+    border-width: 0px;
+  }
+  .formulario{
+    display:block;
+  }
+  .container-acount{
+    margin-top: 40px;
+    display: flex;
+  }
+  .profile{
+    padding-top: 60px;
+   
+    width: 15%;
+    height: 75vh;
+    border-radius: 22px;
+    justify-content: center;
+    background-color: #e1e1e1;
+    border-color: linear-gradient(0deg, #74BB73, #45a5c3);;
+    border-width: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    justify-content: center;
+    padding-left: 10px;
+  }
+  .Info-acount {
+    border: 1px solid #808080;
+    border-radius: 22px;
+    height: 82vh;
+    padding-top: 30px;
+    width: 85%;
+    margin-left: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.Colp1{
+  width: 100%;
+  height: 60px;
+  background-color: #383838;
+  border-radius: 12px;
+  display: flex;
+}
+.date-acount{
+  font-size: 18px;
+  color: #e1e1e1;
+  padding-right: 40px;
+  padding-left: 40px;
+}
