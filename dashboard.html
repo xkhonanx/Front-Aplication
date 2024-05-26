@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="colum1h">
+        <img src="" alt="">
+      </div>
+      <div class="colum2h">
+        <a class="menu" href="#home">Manager  Daniel Matteo</a>   
+      </div>
+      <div class="colum3h">
+        <button class="Descargar" onclick="location.href='index.html'"> SING OUT</button>
+        <img   class="manager" style="width: 35px; margin-left: 60px;" src="imagenes/usuario.png" alt="">
+      </div>
+    </div>
+
+    <div class="ManagerContent">
+
+      <div class="tabs" >
+        <button class="tablink" onclick="openTab('tab1')"> <img  class="iconmenu" src="svg/Cactus.svg" alt="" >JUGADORES</button>
+        <button class="tablink" onclick="openTab('tab2')"> <img  class="iconmenu" src="svg/Clover.svg" alt="">Climas</button>
+        <button class="tablink" onclick="openTab('tab3')"> <img  class="iconmenu" src="svg/garden, plant, branches, leaves, herb.svg" alt="">ACCIONES</button>
+        <button class="tablink" onclick="openTab('tab4')"> <img  class="iconmenu" src="svg/plants, flowers, tulips.svg" alt="">Cultivo</button>
+        <button class="tablink" onclick="openTab('tab5')"> <img  class="iconmenu" src="svg/plants, herb, branch, leaves, h.svg" alt="">Dispositivo</button>
+        <button class="tablink" onclick="openTab('tab6')"> <img  class="iconmenu" src="svg/Flavoring.svg" alt="">granja</button>
+        <!--<button class="tablink" onclick="openTab('tab7')"> <img  class="iconmenu" src="svg/Coffee grains, beans, branch.svg" alt="">Partida</button>-->
+        <button class="tablink" onclick="openTab('tab8')"> <img  class="iconmenu" src="svg/Coffee grains, beans, branch.svg" alt="">Tipo Dispositivo</button>
+        <img src="svg/Sprout, herb.svg" style="width: 150px; margin-top: 100px; border-radius: 100%; background: linear-gradient(135deg, #74BB73, #45a5c3); padding: 25px;" alt=""> 
+      </div>
+
+      <div class="Content-taps">
+        <!------------------ Esta es la tab #1  Jugadores ---------------------------->
+        <div id="tab1" class="tabcontent">
+          <div class="FORMEDIT" id="editForm" style="display: none;">
+            <h2>Editar Jugador</h2>
+            <form>
+                <input type="hidden" id="editId" />
+                <label >Usuario</label>
+                <input type="text" id="editNombreUsuario" placeholder="Nombre de usuario" />
+                <label >Nombres</label>
+                <input type="text" id="editNombres" placeholder="Nombres" />
+                <label >Apellidos</label>
+                <input type="text" id="editApellidos" placeholder="Apellidos" />
+                <label >Email</label>
+                <input type="text" id="editEmail" placeholder="Email" />
+                <label >Contraseña</label>
+                <input type="password" id="editPassword" placeholder="Contraseña" class="contrasena"/>
+                <label >Url Fotografia</label>
+                <input type="text" id="editPhoto" placeholder="URL de la foto" />
+                <button type="button" id="saveButton">Guardar</button>
+                <button type="button" id="cancelButton">Cancelar</button>
+            </form>
+          </div>
+
+          <h1 >JUGADORES</h1>
+
+          <button type="button" id="crearJugador">Crear nuevo jugador</button>
+          <div class="FORMEDIT" id="crearForm" style="display: none;">
+            <h2>Crear Jugador</h2>
+            <form id="nuevo-jugador-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="creaNombreUsuario" placeholder="Nombre de usuario" />
+              <input type="text" id="creaNombres" placeholder="Nombres" />
+              <input type="text" id="creaApellidos" placeholder="Apellidos" />
+              <input type="text" id="creaEmail" placeholder="Email" />
+              <input type="password" id="creaPassword" placeholder="Contraseña" class="contrasena"/>
+              <input type="text" id="creaPhoto" placeholder="URL de la foto" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancel">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarJugador">Consultar jugador por Id</button>
+              <input type="text" id="jugadorById" placeholder="Id de jugador">
+              <div id="resultado"></div>
+          <br><br>
+
+          <p>Jugadores registrados</p>
+          <div class="listas">
+            <ul id="jugadores"></ul>
+          </div>
+          <script src="jugadores.js"></script>
+        </div>
+        <!------------------ Esta es la tab #2  Clima ---------------------------->  
+        <div id="tab2" class="tabcontent" style="display: none;">
+          <div class="FORMEDIT" id="editFormclima" style="display: none;">
+            <h2>Editar Clima</h2>
+            <form>
+              <input type="hidden" id="editclimaId" />
+              <LAbel>Nombre de Clima</LAbel>
+              <input type="text" id="editnombreClima" placeholder="Nombre de Clima" />
+              <LAbel>Efecto Clima</LAbel>
+              <input type="text" id="editefectoClima" placeholder="Efecto Clima" />
+              <button type="button" id="saveButtonclima">Guardar</button>
+              <button type="button" id="cancelButtonclima">Cancelar</button>
+            </form>
+          </div>
+
+          <h1 >Climas</h1>
+
+          <button type="button" id="crearClima">Crear nuevo clima</button>
+          <div class="FORMEDIT" id="crearClimaForm" style="display: none;">
+            <h2>Crear Clima</h2>
+            <form id="nuevo-clima-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="creanombreClima" placeholder="Nombre de clima" />
+              <input type="text" id="creaefectoClima" placeholder="Efecto de Clima" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancelClima">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarClima">Consultar clima por Id</button>
+              <input type="text" id="climaById" placeholder="Id de clima">
+              <div id="resultadoClima"></div>
+          <br><br>
+
+          <p>Climas registrados</p> 
+          <div class="listas">
+            <ul id="climas"></ul>
+          </div>
+          <script src="climas.js"></script>
+        </div>
+        <!------------------ Esta es la tab #3  Accion ---------------------------->  
+        <div id="tab3" class="tabcontent" style="display: none;">
+          <div class="FORMEDIT" id="editFormaccion" style="display: none;">
+            <h2>Editar accion</h2>
+            <form>
+              <input type="hidden" id="editaccionId" />
+              <label >Nombre Accion</label>
+              <input type="text" id="editnombreAccion" placeholder="Nombre de accion" />
+              <label >Descripcion</label>
+              <input type="text" id="editdescripcion" placeholder="Descripcion Accion" />
+              <label >ID dispositivo</label>
+              <input type="text" id="editdispositivoId" placeholder="Dispositivo" />
+              <button type="button" id="saveButtonaccion">Guardar</button>
+              <button type="button" id="cancelButtonaccion">Cancelar</button>
+            </form>
+          </div>
+          <h1 >Acciones</h1>
+
+          <button type="button" id="crearAccion">Crear nueva accion</button>
+          <div class="FORMEDIT" id="crearAccionForm" style="display: none;">
+            <h2>Crear Accion</h2>
+            <form id="nuevo-accion-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="nombreAccion" placeholder="Nombre de accion" />
+              <input type="text" id="descripcion" placeholder="Descripcion" />
+              <input type="text" id="dispositivoId" placeholder="Dispositivo Id" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancelAccion">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarAccion">Consultar accion por Id</button>
+              <input type="text" id="accionById" placeholder="Id de accion">
+              <div id="resultadoAccion"></div>
+          <br><br>
+
+
+          <p>Acciones registradas</p>
+          <div class="listas">
+            <ul id="acciones"></ul>
+          </div>
+          <script src="accion.js"></script>
+        </div>
+         <!------------------ Esta es la tab #4  Cultivo ---------------------------->  
+        <div id="tab4" class="tabcontent" style="display: none;">
+          <div class="FORMEDIT" id="editFormcultivo" style="display: none;">
+            <h2>Editar Cultivo</h2>
+            <form>
+              <input type="hidden" id="editcultivoId" />
+              <LAbel>Nombre del cultivo</LAbel>
+              <input type="text" id="editcultivoNombre" placeholder="Nombre del cultivo" />
+              <LAbel>Nivel Del agua</LAbel>
+              <input type="text" id="editnivelAgua" placeholder="Nivel Del agua" />
+              <LAbel>Estado del cultivo</LAbel>
+              <input type="text" id="editestado" placeholder="Estado del cultivo" />
+              <button type="button" id="saveButtoncultivo">Guardar</button>
+              <button type="button" id="cancelButtoncultivo">Cancelar</button>
+            </form>
+          </div>
+
+          <h1 >Cultivos</h1>
+
+          <button type="button" id="crearCultivo">Crear nuevo cultivo</button>
+          <div class="FORMEDIT" id="crearCultivoForm" style="display: none;">
+            <h2>Crear Cultivo</h2>
+            <form id="nuevo-cultivo-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="cultivoNombre" placeholder="Nombre de cultivo" />
+              <input type="text" id="nivelAgua" placeholder="Nivel de agua entre 1 a 5" />
+              <input type="text" id="estado" placeholder="estado de cultivo vivo o muerto" />
+              <input type="text" id="dispositivoId" placeholder="Dispositivo Id" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancelCultivo">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarCultivo">Consultar cultivo por Id</button>
+              <input type="text" id="cultivoById" placeholder="Id de cultivo">
+              <div id="resultadoCultivo"></div>
+          <br><br>
+
+          <p>Cultivos registrados</p> 
+          <div class="listas">
+            <ul id="cultivos"></ul>
+          </div>
+          <script src="cultivos.js"></script>
+        </div>
+        <!------------------ Esta es la tab #5  Ddsipositivo  ---------------------------->  
+        <div id="tab5" class="tabcontent" style="display: none;">
+          <div class="FORMEDIT" id="editFormdispositivo" style="display: none;">
+            <h2>Editar Dispositivo</h2>
+            <form>
+              <input type="hidden" id="editDispositivoId" />
+              <LAbel>Nombre de dispositivo</LAbel>
+              <input type="text" id="editNombreDispositivo" placeholder="Nombre de Dispositivo" />
+              <LAbel>descripcion</LAbel>
+              <input type="text" id="editDescripcionDis" placeholder="descripcion" />
+              <LAbel>tipo Dispositivo</LAbel>
+              <input type="text" id="editTipoDispositivoIdDis" placeholder="tipoDispositivoId" />
+              <button type="button" id="saveButtondispositivo">Guardar</button>
+              <button type="button" id="cancelButtondispositivo">Cancelar</button>
+            </form>
+          </div>
+
+          <h1 >Dispositivos</h1>
+          <button type="button" id="crearDispositivo">Crear nuevo dispositivo</button>
+          <div class="FORMEDIT" id="crearDispositivoForm" style="display: none;">
+            <h2>Crear Dispositivo</h2>
+            <form id="nuevo-dispositivo-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="creanombreDispositivo" placeholder="Nombre de dispositivo" />
+              <input type="text" id="creadescripcionDis" placeholder="Descripcion" />
+              <input type="text" id="creatipoDispositivoId" placeholder="Tipo dispositivo Id" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancelDispositivo">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarDispositivo">Consultar Dispositivo por Id</button>
+              <input type="text" id="dispositivoById" placeholder="Id de dispositivo">
+              <div id="resultadoDispositivo"></div>
+          <br><br>
+
+          <p>Dispositivos registrados</p> 
+          <div class="listas">
+            <ul id="dispositivos"></ul>
+          </div>
+          <script src="dispositivos.js"></script>
+        </div>
+        <!------------------ Esta es la tab #6  Granja ---------------------------->
+        <div id="tab6" class="tabcontent" style="display: none;">
+          <div class="FORMEDIT" id="editFormgranja" style="display: none;">
+            <h2>Editar granja</h2>
+            <form>
+              <input type="hidden" id="editgranjaId" />
+              <LAbel>Nombre de granja</LAbel>
+              <input type="text" id="editnombreGranja" placeholder="Nombre de granja" />
+              <LAbel>Cultivo ID</LAbel>
+              <input type="text" id="editcultivoId" placeholder="Cultivo ID" />
+              <LAbel>Clima Id</LAbel>
+              <input type="text" id="editclimaId" placeholder="Clima ID" />
+              <LAbel>Sistema de Riego</LAbel>
+              <input type="text" id="editsistemaRiego" placeholder="sistema Riego" />
+              <LAbel>Dificultad</LAbel>
+              <input type="text" id="editdificultad" placeholder="dificultad" />
+              <button type="button" id="saveButtongranja">Guardar</button>
+              <button type="button" id="cancelButtongranja">Cancelar</button>
+            </form>
+          </div>
+
+          <h1 >Granjas</h1>
+
+          <button type="button" id="crearGranja">Crear nueva granja</button>
+          <div class="FORMEDIT" id="crearGranjaForm" style="display: none;">
+            <h2>Crear Granja</h2>
+            <form id="nuevo-granja-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="creanombreGranja" placeholder="Nombre de granja" />
+              <input type="text" id="creacultivoId" placeholder="Cultivo Id" />
+              <input type="text" id="creaclimaId" placeholder="Clima Id" />
+              <input type="text" id="creasistemaRiego" placeholder="Sistema de riego" />
+              <input type="text" id="creadificultad" placeholder="Dificultad" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancelGranja">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarGranja">Consultar granja por Id</button>
+              <input type="text" id="granjaById" placeholder="Id de granja">
+              <div id="resultadoGranja"></div>
+          <br><br>
+
+
+          <p>Granjas registrados</p> 
+          <div class="listas">
+            <ul id="granjas"></ul>
+          </div>
+          <script src="granjas.js"></script>
+        </div>
+        <!------------------ Esta es la tab #7  partida ---------------------------->
+        <!--<div id="tab7" class="tabcontent" style="display: none;">
+          <h1>Aca iria lo de la partida como estan los otros formularios</h1>
+        </div> -->
+        <!------------------ Esta es la tab #8  Tipo Dispositivo ---------------------------->
+        <div id="tab8" class="tabcontent" style="display: none;">
+          <div class="FORMEDIT" id="editFormtipoDispositivo" style="display: none;">
+            <h2>Editar Tipo de Dispositivo</h2>
+            <form>
+              <input type="hidden" id="edittipoDispositivoId" />
+              <LAbel>Nombre de Tipo Dispositivo</LAbel>
+              <input type="text" id="editnombreTipoDispositivo" placeholder="Nombre de Tipo Dispositivo" />
+              <button type="button" id="saveButtontipodispositivo">Guardar</button>
+              <button type="button" id="cancelButtontipodispositivo">Cancelar</button>
+            </form>
+          </div>
+
+          <h1 >Tipo Dispositivo</h1>
+
+          <button type="button" id="crearTipoDispositivo">Crear nuevo tipo de  dispositivo</button>
+          <div class="FORMEDIT" id="crearTipoDispositivoForm" style="display: none;">
+            <h2>Crear tipo de dispositivo</h2>
+            <form id="nuevo-tipodispositivo-form">
+              <input type="hidden" id="creaId" />
+              <input type="text" id="creanombreTipoDispositivo" placeholder="Nombre de tipo de dispositivo" />
+              <button type="submit">Crear</button>
+              <button type="button" id="cancelTipoDispositivo">Cerrar</button>
+            </form>
+          </div>
+          <br><br>
+          <button type="button" id="consultarTipoDispositivo">Consultar tipo de dispositivo por Id</button>
+              <input type="text" id="tipodispositivoById" placeholder="Id de tipo de dispositivo">
+              <div id="resultadoTipoDispositivo"></div>
+          <br><br>
+
+          <p>Tipos Dispositivos registrados</p> 
+          <div class="listas">
+            <ul id="tipoDispositivos"></ul>
+          </div>
+          <script src="tipoDispositivos.js"></script>
+        </div>
+        <script src="taps.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
